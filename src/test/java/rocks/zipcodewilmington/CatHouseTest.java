@@ -84,24 +84,18 @@ public class CatHouseTest {
     }
 
     @Test
-    public void getNumberOfCatsTest(){
+    public void GetNumberOfCatsTest() {
         //Given
-        Cat cat1 = new Cat(null,null, null);
-        Cat cat2 = new Cat(null, null, null);
-        Cat cat3 = new Cat(null, null, null);
+
+        String name = "Milo";
+        Date birthDate = new Date();
+        Cat animal = AnimalFactory.createCat(name, birthDate);
+        CatHouse.clear();
 
         //When
-        CatHouse.add(cat1);
-        CatHouse.add(cat2);
-        CatHouse.add(cat3);
-
-        Integer expectedNumOfCats = 4;
+        CatHouse.add(animal);
 
         //Then
-        Assert.assertEquals(expectedNumOfCats, CatHouse.getNumberOfCats());
-
-
-        //Then
-
+        CatHouse.getNumberOfCats();
     }
 }
